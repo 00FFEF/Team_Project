@@ -11,3 +11,7 @@ def index(request):
         resultstr = '<h1>여기는 main 입니다.</h1>'
 
     return HttpResponse(resultstr)
+
+def index01(request):
+    result = {'first':'Team Name', 'second':'Phoenix'}
+    return render(request, 'index.html', context=result)
