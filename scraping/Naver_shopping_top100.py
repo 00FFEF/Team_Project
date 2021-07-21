@@ -26,8 +26,8 @@ for content in contents:
 
     try:
         cursor.execute(
-            "insert into dbapp_navershop(create_date, title) values(datetime('now'), ?)", (title))
-        #print(title)
+            "insert into dbapp_navershop(create_date, title) values(datetime('now'), ?)", [title])
+        print(title)
     except:
         pass
 
