@@ -5,3 +5,7 @@ class Kakaoshop(models.Model):
     rank = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
     create_date = models.CharField(max_length=100)
+
+class Navershop(models.Model):
+    title = models.CharField(max_length=100)
+    create_date = models.CharField(max_length=100)
