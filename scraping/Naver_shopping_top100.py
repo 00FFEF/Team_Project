@@ -32,6 +32,7 @@ for content in contents:
         pass
 
 connect.commit()
+connect.close()
 
 browser.close()
 browser.quit()
