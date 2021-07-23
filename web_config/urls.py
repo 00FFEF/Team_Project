@@ -21,4 +21,8 @@ from home import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.main),
+    path('main', views.main),
+    path('scrapping_index', views.scrapping_index),
+    path('machine_index',views.machine_index),
+    path('service_index',views.service_index),
 ]
