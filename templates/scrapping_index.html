@@ -13,7 +13,7 @@
   <script src="https://code.highcharts.com/modules/export-data.js"></script>
   <script src="https://code.highcharts.com/modules/accessibility.js"></script>
   <script>
-      function display(data){
+      window.onload = function(){
           Highcharts.chart('kakao', {
             title: {
                 text: '카카오 쇼핑몰 탑10의 순위 그래프'
@@ -46,7 +46,22 @@
                     pointStart: 0
                 }
             },
-            series: data,
+            series: [{
+                name: 'Installation',
+                data: [10, 11, 12, 13, 14, 15]
+            }, {
+                name: 'Manufacturing',
+                data: [5, 6, 7, 6, 5, 7]
+            }, {
+                name: 'Sales & Distribution',
+                data: [3, 2, 4, 5, 6, 8]
+            }, {
+                name: 'Project Development',
+                data: [null, null, 0, 2, 3, 4]
+            }, {
+                name: 'Other',
+                data: [1, 2, 3, 4, 5, 6]
+            }],
             responsive: {
                 rules: [{
                     condition: {
@@ -62,8 +77,6 @@
                 }]
             }
         });
-      };
-      window.onload = function(){
           Highcharts.chart('naver', {
             title: {
                 text: '네이버 쇼핑몰 탑10의 순위 그래프'
