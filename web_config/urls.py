@@ -25,4 +25,5 @@ urlpatterns = [
     path('scrapping_index', views.scrapping_index),
     path('machine_index',views.machine_index),
     path('service_index',views.service_index),
+    path('kakao',views.kakao_chart),
 ]

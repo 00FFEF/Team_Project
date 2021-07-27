@@ -7,13 +7,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="http://code.jquery.com/jquery-1.7.js"></script>
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/modules/series-label.js"></script>
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script src="https://code.highcharts.com/modules/export-data.js"></script>
   <script src="https://code.highcharts.com/modules/accessibility.js"></script>
   <script>
-      window.onload = function(){
+      function display(data){
           Highcharts.chart('kakao', {
             title: {
                 text: '카카오 쇼핑몰 탑10의 순위 그래프'
@@ -21,11 +22,14 @@
             subtitle: {
                 text: 'Source: https://store.kakao.com/home/best'
             },
+            chart: {
+
+            },
             yAxis: {
                 title: {
                     text: '순위'
                 },
-                reversed: true
+                reversed: true,
             },
             xAxis: {
                 accessibility: {
@@ -46,22 +50,7 @@
                     pointStart: 0
                 }
             },
-            series: [{
-                name: 'Installation',
-                data: [10, 11, 12, 13, 14, 15]
-            }, {
-                name: 'Manufacturing',
-                data: [5, 6, 7, 6, 5, 7]
-            }, {
-                name: 'Sales & Distribution',
-                data: [3, 2, 4, 5, 6, 8]
-            }, {
-                name: 'Project Development',
-                data: [null, null, 0, 2, 3, 4]
-            }, {
-                name: 'Other',
-                data: [1, 2, 3, 4, 5, 6]
-            }],
+            series: data,
             responsive: {
                 rules: [{
                     condition: {
@@ -142,6 +131,15 @@
         });
       };
 
+  $(document).ready(function(){
+    $.ajax({
+      url:'kakao',
+      datatype:'json',
+      success:function(data){
+          display(data);
+      }
+    });
+  });
 
     </script>
   <style>
@@ -189,10 +187,10 @@
     <div class="w3-content">
       <div class="w3-twothird">
         <h1>카카오 쇼핑몰 차트</h1>
-        <div id="kakao"></div>
       </div>
     </div>
   </div>
+  <div id="kakao"></div>
 
   </body>
 </html>
