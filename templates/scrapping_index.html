@@ -13,7 +13,7 @@
   <script src="https://code.highcharts.com/modules/export-data.js"></script>
   <script src="https://code.highcharts.com/modules/accessibility.js"></script>
   <script>
-      window.onload = function(){
+      function display(data){
           Highcharts.chart('kakao', {
             title: {
                 text: '카카오 쇼핑몰 탑10의 순위 그래프'
@@ -46,22 +46,7 @@
                     pointStart: 0
                 }
             },
-            series: [{
-                name: 'Installation',
-                data: [10, 11, 12, 13, 14, 15]
-            }, {
-                name: 'Manufacturing',
-                data: [5, 6, 7, 6, 5, 7]
-            }, {
-                name: 'Sales & Distribution',
-                data: [3, 2, 4, 5, 6, 8]
-            }, {
-                name: 'Project Development',
-                data: [null, null, 0, 2, 3, 4]
-            }, {
-                name: 'Other',
-                data: [1, 2, 3, 4, 5, 6]
-            }],
+            series: data,
             responsive: {
                 rules: [{
                     condition: {
@@ -77,6 +62,8 @@
                 }]
             }
         });
+      };
+      window.onload = function(){
           Highcharts.chart('naver', {
             title: {
                 text: '네이버 쇼핑몰 탑10의 순위 그래프'
@@ -141,6 +128,8 @@
             }
         });
       };
+
+
     </script>
   <style>
   body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
@@ -153,8 +142,8 @@
   <div class="w3-top">
     <div class="w3-bar w3-red w3-card w3-left-align w3-large">
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-      <a href="/main" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-      <a href="/scrapping_index" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">스크래핑 통계</a>
+      <a href="/main" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
+      <a href="/scrapping_index" class="w3-bar-item w3-button w3-padding-large w3-white">스크래핑 통계</a>
       <a href="/machine_index" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">머신러닝 통계</a>
       <a href="/service_index" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">기타</a>
     </div>
