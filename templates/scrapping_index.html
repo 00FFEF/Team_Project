@@ -7,6 +7,141 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/series-label.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <script>
+      window.onload = function(){
+          Highcharts.chart('kakao', {
+            title: {
+                text: '카카오 쇼핑몰 탑10의 순위 그래프'
+            },
+            subtitle: {
+                text: 'Source: https://store.kakao.com/home/best'
+            },
+            yAxis: {
+                title: {
+                    text: '순위'
+                },
+                reversed: true
+            },
+            xAxis: {
+                accessibility: {
+                    rangeDescription: ''
+                },
+                categories: ['2021-07-21', '2021-07-22', '2021-07-23', '2021-07-24', '2021-07-25', '2021-07-26', '2021-07-27','2021-07-28']
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+            plotOptions: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    },
+                    pointStart: 0
+                }
+            },
+            series: [{
+                name: 'Installation',
+                data: [10, 11, 12, 13, 14, 15, 16, 17]
+            }, {
+                name: 'Manufacturing',
+                data: [5, 6, 7, 6, 5, 7, 4, 1]
+            }, {
+                name: 'Sales & Distribution',
+                data: [3, 2, 4, 5, 6, 8, 9, 7]
+            }, {
+                name: 'Project Development',
+                data: [null, null, 0, 2, 3, 4, 3, 5]
+            }, {
+                name: 'Other',
+                data: [1, 2, 3, 4, 5, 6, 7, 6]
+            }],
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        }
+                    }
+                }]
+            }
+        });
+          Highcharts.chart('naver', {
+            title: {
+                text: '네이버 쇼핑몰 탑10의 순위 그래프'
+            },
+            subtitle: {
+                text: 'Source: https://search.shopping.naver.com/'
+            },
+            yAxis: {
+                title: {
+                    text: '순위'
+                },
+                reversed: true
+            },
+            xAxis: {
+                accessibility: {
+                    rangeDescription: ''
+                },
+                categories: ['2021-07-21', '2021-07-22', '2021-07-23', '2021-07-24', '2021-07-25', '2021-07-26', '2021-07-27','2021-07-28']
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+            plotOptions: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    },
+                    pointStart: 0
+                }
+            },
+            series: [{
+                name: 'Installation',
+                data: [10, 11, 12, 13, 14, 15, 16, 17]
+            }, {
+                name: 'Manufacturing',
+                data: [5, 6, 7, 6, 5, 7, 4, 1]
+            }, {
+                name: 'Sales & Distribution',
+                data: [3, 2, 4, 5, 6, 8, 9, 7]
+            }, {
+                name: 'Project Development',
+                data: [null, null, 0, 2, 3, 4, 3, 5]
+            }, {
+                name: 'Other',
+                data: [1, 2, 3, 4, 5, 6, 7, 6]
+            }],
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        }
+                    }
+                }]
+            }
+        });
+      };
+    </script>
   <style>
   body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
@@ -42,12 +177,8 @@
     <div class="w3-content">
       <div class="w3-twothird">
         <h1>네이버 쇼핑몰 차트</h1>
-        <p class="w3-text-grey">내용</p>
+        <div id="naver"></div>
       </div>
-
-<!--      <div class="w3-third w3-center">-->
-<!--        <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>-->
-<!--      </div>-->
     </div>
   </div>
 
@@ -56,7 +187,7 @@
     <div class="w3-content">
       <div class="w3-twothird">
         <h1>카카오 쇼핑몰 차트</h1>
-        <p class="w3-text-grey">내용</p>
+        <div id="kakao"></div>
       </div>
     </div>
   </div>
