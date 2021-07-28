@@ -19,3 +19,7 @@ def service_index(request):
 def kakao_chart(request):
     data = MyAnalysis().kakaoo()
     return HttpResponse(json.dumps(data), content_type='application/json')
+
+def naver_chart(request):
+    data = MyAnalysis().never()
+    return HttpResponse(json.dumps(data), content_type='application/json')

@@ -83,15 +83,80 @@ class MyAnalysis:
     def naver(self):
         con = sqlite3.connect("../db.sqlite3")
         cur = con.cursor()
-        cur.execute("SELECT * FROM dbapp_kakaoshop")
+        cur.execute("SELECT * FROM dbapp_navershop")
         datas = cur.fetchall()
         lists = []
         for data in datas:
             product = dict()
             prod = []
+            if data[0] <= 10:
+                prod.append(int(data[0]))
+                product['name'] = data[1]
+                product['data'] = prod
+            elif 101 <= data[0] <= 110:
+                for list in lists:
+                    if data[1] == list['name']:
+                        list['data'].append(int(data[0])-100)
+                else:
+                    prod.append('null')
+                    prod.append(int(data[0])-100)
+                    product['name'] = data[1]
+                    product['data'] = prod
+            elif 201 <= data[0] <= 210:
+                for list in lists:
+                    if data[1] == list['name']:
+                        list['data'].append(int(data[0])-200)
+                else:
+                    prod.append('null')
+                    prod.append('null')
+                    prod.append(int(data[0])-200)
+                    product['name'] = data[1]
+                    product['data'] = prod
+            elif 301 <= data[0] <= 310:
+                for list in lists:
+                    if data[1] == list['name']:
+                        list['data'].append(int(data[0])-300)
+                else:
+                    prod.append('null')
+                    prod.append('null')
+                    prod.append('null')
+                    prod.append(int(data[0])-300)
+                    product['name'] = data[1]
+                    product['data'] = prod
+            elif 401 <= data[0] <= 410:
+                for list in lists:
+                    if data[1] == list['name']:
+                        list['data'].append(int(data[0])-400)
+                else:
+                    prod.append('null')
+                    prod.append('null')
+                    prod.append('null')
+                    prod.append('null')
+                    prod.append(int(data[0])-400)
+                    product['name'] = data[1]
+                    product['data'] = prod
+            elif 501 <= data[0] <= 510:
+                for list in lists:
+                    if data[1] == list['name']:
+                        list['data'].append(int(data[0])-500)
+                else:
+                    prod.append('null')
+                    prod.append('null')
+                    prod.append('null')
+                    prod.append('null')
+                    prod.append('null')
+                    prod.append(int(data[0])-500)
+                    product['name'] = data[1]
+                    product['data'] = prod
+            if len(product.keys()) != 0:
+                lists.append(product)
         con.close()
         print(lists)
         return lists
 
+    def never(self):
+        never = [{'name': '맛있는 오뚜기밥 210g', 'data': [1, 1, 1, 1, 1, 1]}, {'name': '후디스 하이뮨 프로틴 밸런스 304g', 'data': [2, 2, 2, 2, 2, 2]}, {'name': '농심 신라면 120g', 'data': [3, 3, 7]}, {'name': '락토핏 생유산균 골드 2g x 50포', 'data': [4, 4, 4, 4, 5, 4]}, {'name': '오늘의바디 에이치프로틴 WPI 초코맛 1000g', 'data': [5, 9, 9, 9]}, {'name': '하루웰빙 락토 리얼 포스트바이오틱스 500m...', 'data': [6, 5, 5, 5, 6, 6]}, {'name': 'CJ제일제당 햇반 210g', 'data': [7, 7, 9, 6, 4, 7]}, {'name': '제주특별자치도개발공사 삼다수 2L', 'data': [8, 6, 3, 3, 3, 3]}, {'name': '지웨이 알티지 오메가3 장용성 EPA DHA 120...', 'data': [9, 8, 6, 8, 8, 5]}, {'name': '골든팜 지웨이 올스타 스팀 닭가슴살 오리지...', 'data': [10, 9, 8, 7, 7]}, {'name': '맛있는 오뚜기밥 210g', 'data': ['null', 1, 1, 1, 1, 1]}, {'name': '후디스 하이뮨 프로틴 밸런스 304g', 'data': ['null', 2, 2, 2, 2, 2]}, {'name': '농심 신라면 120g', 'data': ['null', 3, 7]}, {'name': '락토핏 생유산균 골드 2g x 50포', 'data': ['null', 4, 4, 4, 5, 4]}, {'name': '하루웰빙 락토 리얼 포스트바이오틱스 500m...', 'data': ['null', 5, 5, 5, 6, 6]}, {'name': '제주특별자치도개발공사 삼다수 2L', 'data': ['null', 6, 3, 3, 3, 3]}, {'name': 'CJ제일제당 햇반 210g', 'data': ['null', 7, 9, 6, 4, 7]}, {'name': '지웨이 알티지 오메가3 장용성 EPA DHA 120...', 'data': ['null', 8, 6, 8, 8, 5]}, {'name': '골든팜 지웨이 올스타 스팀 닭가슴살 오리지...', 'data': ['null', 9, 8, 7, 7]}, {'name': '종근당건강 프로메가 알티지 오메가3 듀얼 ...', 'data': ['null', 10, 10]}, {'name': '맛있는 오뚜기밥 210g', 'data': ['null', 'null', 1, 1, 1, 1]}, {'name': '후디스 하이뮨 프로틴 밸런스 304g', 'data': ['null', 'null', 2, 2, 2, 2]}, {'name': '제주특별자치도개발공사 삼다수 2L', 'data': ['null', 'null', 3, 3, 3, 3]}, {'name': '락토핏 생유산균 골드 2g x 50포', 'data': ['null', 'null', 4, 4, 5, 4]}, {'name': '하루웰빙 락토 리얼 포스트바이오틱스 500m...', 'data': ['null', 'null', 5, 5, 6, 6]}, {'name': '지웨이 알티지 오메가3 장용성 EPA DHA 120...', 'data': ['null', 'null', 6, 8, 8, 5]}, {'name': '농심 신라면 120g', 'data': ['null', 'null', 7]}, {'name': '골든팜 지웨이 올스타 스팀 닭가슴살 오리지...', 'data': ['null', 'null', 8, 7, 7]}, {'name': 'CJ제일제당 햇반 210g', 'data': ['null', 'null', 9, 6, 4, 7]}, {'name': '종근당건강 프로메가 알티지 오메가3 듀얼 ...', 'data': ['null', 'null', 10]}, {'name': '맛있는 오뚜기밥 210g', 'data': ['null', 'null', 'null', 1, 1, 1]}, {'name': '후디스 하이뮨 프로틴 밸런스 304g', 'data': ['null', 'null', 'null', 2, 2, 2]}, {'name': '제주특별자치도개발공사 삼다수 2L', 'data': ['null', 'null', 'null', 3, 3, 3]}, {'name': '락토핏 생유산균 골드 2g x 50포', 'data': ['null', 'null', 'null', 4, 5, 4]}, {'name': '하루웰빙 락토 리얼 포스트바이오틱스 500m...', 'data': ['null', 'null', 'null', 5, 6, 6]}, {'name': 'CJ제일제당 햇반 210g', 'data': ['null', 'null', 'null', 6, 4, 7]}, {'name': '골든팜 지웨이 올스타 스팀 닭가슴살 오리지...', 'data': ['null', 'null', 'null', 7, 7]}, {'name': '지웨이 알티지 오메가3 장용성 EPA DHA 120...', 'data': ['null', 'null', 'null', 8, 8, 5]}, {'name': '오늘의바디 에이치프로틴 WPI 초코맛 1000g', 'data': ['null', 'null', 'null', 9, 9, 9]}, {'name': '에스큐 SQ 캡슐 프로바이오틱스 생유산균 5...', 'data': ['null', 'null', 'null', 10, 10]}, {'name': '맛있는 오뚜기밥 210g', 'data': ['null', 'null', 'null', 'null', 1, 1]}, {'name': '후디스 하이뮨 프로틴 밸런스 304g', 'data': ['null', 'null', 'null', 'null', 2, 2]}, {'name': '제주특별자치도개발공사 삼다수 2L', 'data': ['null', 'null', 'null', 'null', 3, 3]}, {'name': 'CJ제일제당 햇반 210g', 'data': ['null', 'null', 'null', 'null', 4, 7]}, {'name': '락토핏 생유산균 골드 2g x 50포', 'data': ['null', 'null', 'null', 'null', 5, 4]}, {'name': '하루웰빙 락토 리얼 포스트바이오틱스 500m...', 'data': ['null', 'null', 'null', 'null', 6, 6]}, {'name': '골든팜 지웨이 올스타 스팀 닭가슴살 오리지...', 'data': ['null', 'null', 'null', 'null', 7]}, {'name': '지웨이 알티지 오메가3 장용성 EPA DHA 120...', 'data': ['null', 'null', 'null', 'null', 8, 5]}, {'name': '오늘의바디 에이치프로틴 WPI 초코맛 1000g', 'data': ['null', 'null', 'null', 'null', 9, 9]}, {'name': '에스큐 SQ 캡슐 프로바이오틱스 생유산균 5...', 'data': ['null', 'null', 'null', 'null', 10]}, {'name': '맛있는 오뚜기밥 210g', 'data': ['null', 'null', 'null', 'null', 'null', 1]}, {'name': '후디스 하이뮨 프로틴 밸런스 304g', 'data': ['null', 'null', 'null', 'null', 'null', 2]}, {'name': '제주특별자치도개발공사 삼다수 2L', 'data': ['null', 'null', 'null', 'null', 'null', 3]}, {'name': '락토핏 생유산균 골드 2g x 50포', 'data': ['null', 'null', 'null', 'null', 'null', 4]}, {'name': '지웨이 알티지 오메가3 장용성 EPA DHA 120...', 'data': ['null', 'null', 'null', 'null', 'null', 5]}, {'name': '하루웰빙 락토 리얼 포스트바이오틱스 500m...', 'data': ['null', 'null', 'null', 'null', 'null', 6]}, {'name': 'CJ제일제당 햇반 210g', 'data': ['null', 'null', 'null', 'null', 'null', 7]}, {'name': '동원 샘물 2L', 'data': ['null', 'null', 'null', 'null', 'null', 8]}, {'name': '오늘의바디 에이치프로틴 WPI 초코맛 1000g', 'data': ['null', 'null', 'null', 'null', 'null', 9]}, {'name': '제주특별자치도개발공사 삼다수 500ml', 'data': ['null', 'null', 'null', 'null', 'null', 10]}]
+        return never
+
 if __name__ == '__main__':
-    result = MyAnalysis().kakao();
+    result = MyAnalysis().naver();

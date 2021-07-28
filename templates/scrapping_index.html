@@ -15,7 +15,7 @@
   <script src="https://code.highcharts.com/modules/export-data.js"></script>
   <script src="https://code.highcharts.com/modules/accessibility.js"></script>
   <script>
-      function display(data, data2){
+      function display1(data){
           Highcharts.chart('kakao', {
             title: {
                 text: '카카오 쇼핑몰 탑10의 순위 그래프'
@@ -67,6 +67,9 @@
                 }]
             }
         });
+      };
+
+      function display2(data){
           Highcharts.chart('naver', {
             title: {
                 text: '네이버 쇼핑몰 탑10의 순위 그래프'
@@ -74,17 +77,20 @@
             subtitle: {
                 text: 'Source: https://search.shopping.naver.com/'
             },
+            chart: {
+
+            },
             yAxis: {
                 title: {
                     text: '순위'
                 },
-                reversed: true
+                reversed: true,
             },
             xAxis: {
                 accessibility: {
                     rangeDescription: ''
                 },
-                categories: ['2021-07-21', '2021-07-22', '2021-07-23', '2021-07-26', '2021-07-27','2021-07-28']
+                categories: ['2021-07-20', '2021-07-22', '2021-07-23', '2021-07-26', '2021-07-27','2021-07-28']
             },
             legend: {
                 layout: 'vertical',
@@ -99,7 +105,7 @@
                     pointStart: 0
                 }
             },
-            series: data2,
+            series: data,
             responsive: {
                 rules: [{
                     condition: {
@@ -122,7 +128,14 @@
       url:'kakao',
       datatype:'json',
       success:function(data){
-          display(data);
+          display1(data);
+          $.ajax({
+            url:'naver',
+            datatype:'json',
+            success:function(data){
+              display2(data);
+            }
+          });
       }
     });
   });
@@ -163,10 +176,10 @@
     <div class="w3-content">
       <div class="w3-twothird">
         <h1>네이버 쇼핑몰 차트</h1>
-        <div id="naver"></div>
       </div>
     </div>
   </div>
+  <div id="naver"></div>
 
   <!-- Second Grid -->
   <div class="w3-row-padding w3-padding-64 w3-container">
