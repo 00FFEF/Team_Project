@@ -15,6 +15,10 @@
   body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
   .fa-anchor,.fa-coffee {font-size:200px}
+  details > summary { background:#477; color:#fff; padding:10px;
+  outline:0; border-radius:5px; cursor:pointer;
+  transition:background 0.5s; text-align:left;
+  box-shadow: 1px 1px 2px gray;}
   </style>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <body>
@@ -49,6 +53,9 @@
         <h1>머신러닝</h1>
         <p class="w3-text-grey">데이터 표</p>
         <div class="container">
+        <details open>
+            <summary>데이터 표 더보기/접기</summary>
+            <p>
         <table class="table table-striped">
             <thead>
             <tr>
@@ -72,6 +79,8 @@
             {% endfor %}
             <tbody>
         </table>
+            </p>
+        </details>
 
         <div id="myPlot1" style="width:100%;max-width:700px"></div>
         <script>
