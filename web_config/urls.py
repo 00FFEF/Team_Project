@@ -27,4 +27,5 @@ urlpatterns = [
     path('service_index',views.service_index),
     path('kakao',views.kakao_chart),
     path('naver',views.naver_chart),
+    path('ad',views.ad)
 ]

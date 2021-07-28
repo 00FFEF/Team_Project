@@ -4,6 +4,9 @@ from django.http import HttpResponse
 from templates.MyAnalysis import MyAnalysis
 import sqlite3
 
+import pandas as pd
+import sqlite3
+
 # Create your views here.
 def main(request):
     return render(request, 'index.html')
@@ -39,3 +42,14 @@ def kakao_chart(request):
 def naver_chart(request):
     data = MyAnalysis().never()
     return HttpResponse(json.dumps(data), content_type='application/json')
+
+def ad(request):
+    conn = sqlite3.connect("../db.sqlite3")
+    df = pd.read_sql_query('select * from dbapp_admachine da', conn)
+    age = df['Age']
+    sal = df['EstimatedSalary']
+    gen = df['Gender']
+    pur = df['Purchased']
+    uid = df['UserID']
+    result = {'Age' : age, 'Estimated Salary' : sal, 'Gender' : gen, 'Purchased' : pur, 'User ID' : uid}
+    return render(request, 'machine_index.html', context=result)
