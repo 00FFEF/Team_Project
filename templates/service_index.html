@@ -42,7 +42,23 @@
     <div class="w3-content">
       <div class="w3-twothird">
         <h1>서비스 페이지</h1>
-        <p class="w3-text-grey">내용</p>
+        <script type ="text/javascript">
+          function getElement(){
+              var msg=document.getElementById("gender");
+              var msg2=document.getElementById("age");
+              var msg3=document.getElementById("salary");
+
+          <!--alert(msg.value);-->
+              alert("미완성");
+          <!--alert(msg3.value);-->
+          }
+        </script>
+        <p>
+          <h5><input class="w3-input w3-border" id="gender" type="text" placeholder="성별"></h5>
+          <h5><input class="w3-input w3-border" id="age" type="text" placeholder="나이"></h5>
+          <h5><input class="w3-input w3-border" id="salary" type="text" placeholder="시급"></h5>
+          <input type="button" value="확인" onclick="getElement();">
+        </p>
       </div>
 
 <!--      <div class="w3-third w3-center">-->
