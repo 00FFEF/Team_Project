@@ -53,20 +53,21 @@
             <thead>
             <tr>
                 <td><B>Age</B></td>
-                <td><B>Estimated Salary</B></td>
+                <td><B>EstimatedSalary</B></td>
                 <td><B>Gender</B></td>
                 <td><B>Purchased</B></td>
-                <td><B>User ID</B></td>
+                <td><B>UserID</B></td>
             </tr>
             </thead>
             <tbody>
-            {% for a in result %}
+            {% for row in erows %}
             <tr>
-                <td>{{a.Age}}</td>
-                <td>{{a.Estimated Salary}}</td>
-                <td>{{a.Gender}}</td>
-                <td>{{a.Purchased}}</td>
-                <td>{{a.User ID}}</td>
+                <td>{{ row.Age }}</td>
+                <td>{{ row.EstimatedSalary }}</td>
+                <td>{{ row.Gender }}</td>
+                <td>{{ row.Purchased }}</td>
+                <td>{{ row.UserID }}</td>
+                <td>{{ row.id }}</td>
             </tr>
             {% endfor %}
             <tbody>
@@ -114,7 +115,7 @@
 
         // Define Layout
         var layout = {
-          xaxis: {range: [20, 160], title: "Estimated Salary (Per $1,000)"},
+          xaxis: {range: [20, 160], title: "EstimatedSalary (Per $1,000)"},
           yaxis: {range: [10, 90], title: "Number of People"},
           title: "Estimated Salary"
         };
