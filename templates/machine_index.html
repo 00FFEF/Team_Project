@@ -12,6 +12,7 @@
   .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
   .fa-anchor,.fa-coffee {font-size:200px}
   </style>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <body>
 
   <!-- Navbar -->
@@ -44,8 +45,59 @@
         <h1>머신러닝 데이터 표시</h1>
         <p class="w3-text-grey">데이터 표(삽입예정)</p>
         <a href = "ml.html">정보 단계</a>
-      </div>
+        <div id="myPlot1" style="width:100%;max-width:700px"></div>
 
+        <script>
+        var xArray = ["Male", "Female"];
+        var yArray = [196, 204];
+
+        var data = [{
+          x:xArray,
+          y:yArray,
+          type:"bar"
+        }];
+
+        var layout = {title:"World Wide Wine Production"};
+
+        Plotly.newPlot("myPlot1", data, layout);
+        </script>
+
+        <div id="myPlot2" style="width:100%;max-width:700px"></div>
+        <script>
+        var xArray = ['Teenagers', 'Twenties', 'Thirties', 'Fouries', 'Fifties', 'Sixties'];
+        var yArray = [12, 88, 138, 109, 46, 7];
+
+        var layout = {title:"Age"};
+
+        var data = [{labels:xArray, values:yArray, type:"pie"}];
+
+        Plotly.newPlot("myPlot2", data, layout);
+        </script>
+
+        <div id="myPlot3" style="width:100%;max-width:700px"></div>
+        <script>
+        var xArray = [50,60,70,80,90,100,110,120,130,140,150];
+        var yArray = [7,8,8,9,9,9,10,11,14,14,15];
+
+        // Define Data
+        var data = [{
+          x:xArray,
+          y:yArray,
+          mode:"markers"
+        }];
+
+        // Define Layout
+        var layout = {
+          xaxis: {range: [40, 160], title: "Square Meters"},
+          yaxis: {range: [5, 16], title: "Price in Millions"},
+          title: "Estimated Salary"
+        };
+
+        // Display using Plotly
+        Plotly.newPlot("myPlot3", data, layout);
+        </script>
+
+      </div>
 <!--      <div class="w3-third w3-center">-->
 <!--        <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>-->
 <!--      </div>-->
