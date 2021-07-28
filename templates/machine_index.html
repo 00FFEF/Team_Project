@@ -44,9 +44,8 @@
       <div class="w3-twothird">
         <h1>머신러닝 데이터 표시</h1>
         <p class="w3-text-grey">데이터 표(삽입예정)</p>
-        <a href = "ml.html">정보 단계</a>
-        <div id="myPlot1" style="width:100%;max-width:700px"></div>
 
+        <div id="myPlot1" style="width:100%;max-width:700px"></div>
         <script>
         var xArray = ["Male", "Female"];
         var yArray = [196, 204];
@@ -57,7 +56,7 @@
           type:"bar"
         }];
 
-        var layout = {title:"World Wide Wine Production"};
+        var layout = {title:"Gender"};
 
         Plotly.newPlot("myPlot1", data, layout);
         </script>
