@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
   <style>
   body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
@@ -42,8 +46,31 @@
   <div class="w3-row-padding w3-padding-64 w3-container">
     <div class="w3-content">
       <div class="w3-twothird">
-        <h1>머신러닝 데이터 표시</h1>
-        <p class="w3-text-grey">데이터 표(삽입예정)</p>
+        <h1>머신러닝</h1>
+        <p class="w3-text-grey">데이터 표</p>
+        <div class="container">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td><B>Age</B></td>
+                <td><B>Estimated Salary</B></td>
+                <td><B>Gender</B></td>
+                <td><B>Purchased</B></td>
+                <td><B>User ID</B></td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for a in result %}
+            <tr>
+                <td>{{a.Age}}</td>
+                <td>{{a.Estimated Salary}}</td>
+                <td>{{a.Gender}}</td>
+                <td>{{a.Purchased}}</td>
+                <td>{{a.User ID}}</td>
+            </tr>
+            {% endfor %}
+            <tbody>
+        </table>
 
         <div id="myPlot1" style="width:100%;max-width:700px"></div>
         <script>
