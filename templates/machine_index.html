@@ -133,6 +133,134 @@
         Plotly.newPlot("myPlot3", data, layout);
         </script>
 
+        <h3>Linear Regression ('Age', 'Estimated Salary')</h3>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td><B>coef_1</B></td>
+                <td><B>coef_2</B></td>
+                <td><B>intercept</B></td>
+                <td><B>Linear Regression</B></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>-1.71e^(-9)</td>
+                <td>-2.71^(-6)</td>
+                <td>-2.11^(-10)</td>
+                <td>y = -1.71e^(-9)x_1 - 2.71e^(-6)x_2 - 2.11e^(-10)</td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td><B>score</B></td>
+                <td><B>score(train)</B></td>
+                <td><B>score(test)</B></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>0.6425</td>
+                <td>0.6533</td>
+                <td>0.61</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h3>Linear Regression ('Gender', 'Age', 'Estimated Salary')</h3>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td><B>coef_1</B></td>
+                <td><B>coef_2</B></td>
+                <td><B>coef_2</B></td>
+                <td><B>intercept</B></td>
+                <td><B>Linear Regression</B></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>-6.33e^(-11)</td>
+                <td>-1.92e^(-9)</td>
+                <td>-2.65e^(-6)</td>
+                <td>-2.14e^(-10)</td>
+                <td>y = -6.33e^(-11)x_1 - 1.92e^(-9)x_2 - 2.65e^(-6)x_3 - 2.14e^(-10)</td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td><B>score</B></td>
+                <td><B>score(train)</B></td>
+                <td><B>score(test)</B></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>0.6425</td>
+                <td>0.6533</td>
+                <td>0.61</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h3>Linear Regression(+ scailing)</h3>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td><B>coef_1</B></td>
+                <td><B>coef_2</B></td>
+                <td><B>coef_2</B></td>
+                <td><B>intercept</B></td>
+                <td><B>Linear Regression</B></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>-0.04</td>
+                <td>2.08</td>
+                <td>1.05</td>
+                <td>-1.13</td>
+                <td>y = -0.04x_1 + 2.08x_2 + 1.05x_3 - 1.13</td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td><B>score</B></td>
+                <td><B>score(train)</B></td>
+                <td><B>score(test)</B></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>0.8475</td>
+                <td>0.8433</td>
+                <td>0.86</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h3>XGBRegression</h3>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td><B>score(train)</B></td>
+                <td><B>score(test)</B></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>0.9854</td>
+                <td>0.6487</td>
+            </tr>
+            </tbody>
+        </table>
+
       </div>
 <!--      <div class="w3-third w3-center">-->
 <!--        <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>-->
