@@ -10,21 +10,7 @@
 <a href="https://github.com/00FFEF/Team_Project/tree/master/teams_desc">팀원 소개</a> <br>
 
 ## 진행 일정
-<a href="https://github.com/00FFEF/Team_Project/tree/master/Project_desc">프로젝트 설명</a>
-+ 7/15 ~ 7/18
-  + 주제선정
-  + 업무분장
-  + 목표설정
-+ 7/19 ~ 7/20
-  + Data Scaraping
-+ 7/21 ~ 7/22
-  + Machine Learning
-+ 7/23 ~ 7/24
-  + Back-End
-+ 7/25 ~ 7/27
-  + Front-End
-+ 7/28 ~ 7/29
-  + PPT 정리 및 발표
+<a href="https://github.com/00FFEF/Team_Project/tree/master/project_desc">프로젝트 설명</a>
 
 ## 데이터 출처
 
