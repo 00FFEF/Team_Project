@@ -7,7 +7,7 @@
 웹스크래핑으로 두 쇼핑몰의 Top100 상품 통계
 
 ## 멤버
-<a href="https://github.com/00FFEF/test_django/tree/master/Team_desc">팀원 소개</a> <br>
+<a href="https://github.com/00FFEF/test_django/tree/master/teams_desc">팀원 소개</a> <br>
 
 ## 진행 일정
 <a href="https://github.com/00FFEF/test_django/tree/master/Project_desc">프로젝트 설명</a>
