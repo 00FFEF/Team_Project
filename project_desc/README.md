@@ -15,3 +15,5 @@
   + Front-End
 + 7/28 ~ 7/29
   + PPT 정리 및 발표
+
+<a href="https://github.com/00FFEF/team_project">메인으로</a>
